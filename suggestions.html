@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocity Vending</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <svg class="w-8 h-8 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <rect x="6" y="6" width="4" height="4" rx="1" fill="currentColor"/>
+                        <rect x="14" y="6" width="4" height="4" rx="1" fill="currentColor"/>
+                        <rect x="6" y="14" width="4" height="4" rx="1" fill="currentColor"/>
+                        <rect x="14" y="14" width="4" height="4" rx="1" fill="currentColor"/>
+                    </svg>
+                    <span class="text-xl font-bold text-gray-800">Velocity Vending</span>
+                </div>
+                <nav>
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 transition">Home</a></li>
+                        <li><a href="suggestions.html" class="nav-link text-gray-600 hover:text-blue-600 transition">Suggestions</a></li>
+                        <li><a href="contact.html" class="nav-link text-gray-600 hover:text-blue-600 transition">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow flex flex-col">
+<div id="suggestionsPage" class="page flex-grow">
+            
+            </div>
+            
+            <div class="container mx-auto px-4 py-12">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8">
+                        <div class="flex flex-col sm:flex-row items-center justify-between mb-8">
+                            <div class="text-center sm:text-left mb-6 sm:mb-0">
+                                <h2 class="text-4xl font-extrabold text-blue-600 mb-2">Snack Suggestions</h2>
+<p class="text-base text-gray-600 mt-1">We value your input! Let us know what products you'd like to see in our vending machines.</p>
+                            </div>
+                            
+                            <!-- Vending Machine SVG -->
+                            <div class="vending-machine floating">
+                                <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="10" y="10" width="180" height="260" rx="8" fill="#3B82F6" />
+                                    <rect x="20" y="20" width="160" height="160" rx="4" fill="#DBEAFE" />
+                                    
+                                    <!-- Vending items -->
+                                    <rect x="30" y="30" width="30" height="30" rx="2" fill="#FDE68A" />
+                                    <rect x="70" y="30" width="30" height="30" rx="2" fill="#FECACA" />
+                                    <rect x="110" y="30" width="30" height="30" rx="2" fill="#A7F3D0" />
+                                    <rect x="150" y="30" width="30" height="30" rx="2" fill="#C7D2FE" />
+                                    
+                                    <rect x="30" y="70" width="30" height="30" rx="2" fill="#C7D2FE" />
+                                    <rect x="70" y="70" width="30" height="30" rx="2" fill="#A7F3D0" />
+                                    <rect x="110" y="70" width="30" height="30" rx="2" fill="#FECACA" />
+                                    <rect x="150" y="70" width="30" height="30" rx="2" fill="#FDE68A" />
+                                    
+                                    <rect x="30" y="110" width="30" height="30" rx="2" fill="#A7F3D0" />
+                                    <rect x="70" y="110" width="30" height="30" rx="2" fill="#FDE68A" />
+                                    <rect x="110" y="110" width="30" height="30" rx="2" fill="#C7D2FE" />
+                                    <rect x="150" y="110" width="30" height="30" rx="2" fill="#FECACA" />
+                                    
+                                    <rect x="30" y="150" width="30" height="30" rx="2" fill="#FECACA" />
+                                    <rect x="70" y="150" width="30" height="30" rx="2" fill="#C7D2FE" />
+                                    <rect x="110" y="150" width="30" height="30" rx="2" fill="#FDE68A" />
+                                    <rect x="150" y="150" width="30" height="30" rx="2" fill="#A7F3D0" />
+                                    
+                                    <!-- Dispenser -->
+                                    <rect x="60" y="200" width="80" height="40" rx="4" fill="#1E3A8A" />
+                                    <rect x="70" y="210" width="60" height="20" rx="2" fill="#DBEAFE" />
+                                    
+                                    <!-- Coin slot -->
+                                    <rect x="150" y="200" width="20" height="40" rx="2" fill="#1E3A8A" />
+                                    <circle cx="160" cy="210" r="5" fill="#DBEAFE" />
+                                    <rect x="155" y="220" width="10" height="2" fill="#DBEAFE" />
+                                    <rect x="155" y="225" width="10" height="2" fill="#DBEAFE" />
+                                    <rect x="155" y="230" width="10" height="2" fill="#DBEAFE" />
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <form id="suggestionForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name (optional)</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Enter your name">
+                            </div>
+                            
+                            <div>
+                                <label for="itemType" class="block text-sm font-medium text-gray-700 mb-1">Item Type</label>
+                                <select id="itemType" name="itemType" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                                    <option value="snack">Snack</option>
+                                    <option value="drink">Drink</option>
+                                    <option value="candy">Candy</option>
+                                    <option value="healthy">Healthy Option</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="suggestion" class="block text-sm font-medium text-gray-700 mb-1">Your Suggestion</label>
+                                <textarea id="suggestion" name="suggestion" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="What would you like to see in the vending machine?" required></textarea>
+                            </div>
+                            
+                            <div>
+                                <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Vending Machine Location</label>
+                                <select id="location" name="location" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                                    <option value="winners200">Winners 200 Paignton</option>
+                                    <option value="office">Main Office</option>
+                                    <option value="school">Local School</option>
+                                    <option value="gym">Fitness Center</option>
+                                    <option value="other">Other Location</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                Submit Suggestion
+                            </button>
+                        </form>
+                        
+                        <div id="successMessage" class="success-message mt-6 p-4 bg-green-100 border border-green-200 rounded-lg text-center hidden">
+                            <svg class="w-12 h-12 mx-auto text-green-500 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <h3 class="text-lg font-medium text-green-800">Thank you!</h3>
+                            <p class="text-green-700">Your suggestion has been submitted.</p>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Us Page -->
+        
+    </main>
+    <footer class="bg-white border-t border-gray-200 py-4">
+        <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+            &copy; 2023 Velocity Vending. All rights reserved.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

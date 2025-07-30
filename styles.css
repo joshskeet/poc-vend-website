@@ -1,0 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f9ff;
+}
+
+.vending-machine {
+    position: relative;
+    width: 180px;
+    height: 240px;
+}
+
+@media (max-width: 640px) {
+    .vending-machine {
+        width: 140px;
+        height: 200px;
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.success-message {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.success-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
